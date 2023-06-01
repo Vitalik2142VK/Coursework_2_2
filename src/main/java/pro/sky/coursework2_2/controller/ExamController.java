@@ -1,4 +1,4 @@
-package pro.sky.coursework2_2.contriller;
+package pro.sky.coursework2_2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
