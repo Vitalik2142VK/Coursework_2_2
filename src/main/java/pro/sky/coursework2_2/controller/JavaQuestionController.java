@@ -1,5 +1,6 @@
-package pro.sky.coursework2_2.contriller;
+package pro.sky.coursework2_2.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import pro.sky.coursework2_2.domain.Question;
 import pro.sky.coursework2_2.service.QuestionService;
@@ -11,7 +12,7 @@ import java.util.Collection;
 public class JavaQuestionController {
     private final QuestionService service;
 
-    public JavaQuestionController(QuestionService service) {
+    public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService service) {
         this.service = service;
     }
 

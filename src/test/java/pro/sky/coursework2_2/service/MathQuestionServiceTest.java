@@ -17,11 +17,11 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-public class JavaQuestionServiceTest {
+public class MathQuestionServiceTest {
     private Question question;
 
     @Mock
-    @Qualifier("javaQuestionRepository")
+    @Qualifier("mathQuestionRepository")
     private QuestionRepository repository;
 
     private QuestionService service;
@@ -30,7 +30,7 @@ public class JavaQuestionServiceTest {
     public void setUp() {
         question = new Question("question", "answer");
 
-        service = new JavaQuestionService(repository);
+        service = new MathQuestionService(repository);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class JavaQuestionServiceTest {
 
         Mockito.when(repository.remove(null)).thenThrow(NullPointerException.class);
         assertThrows(NullPointerException.class, () -> {
-           service.remove(null);
+            service.remove(null);
         });
 
         Mockito.when(repository.remove(new Question("que", "ans"))).thenThrow(NotFindException.class);
